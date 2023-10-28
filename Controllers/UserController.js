@@ -6,7 +6,9 @@ const loginForm = (req, res) => {
 }
 
 const registerForm = (req, res) => {
-    res.render('auth/register');
+    res.render('auth/register', {
+        title: 'Registrar cuenta',
+    });
 }
 
 export {loginForm, registerForm}
