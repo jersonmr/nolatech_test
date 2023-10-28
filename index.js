@@ -7,7 +7,7 @@ const app = express();
 // Database connection
 try {
     await db.authenticate();
-    console.log('Conexión correcta a la BD');
+    console.log('Conexión correcta a la Base de Datos');
 } catch (error) {
 
 }

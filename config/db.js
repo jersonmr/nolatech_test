@@ -1,9 +1,12 @@
+import dotenv from "dotenv";
 import Sequelize from "sequelize";
 
-const db = new Sequelize('nolatech', 'root', '', {
-    host: 'localhost',
-    port: 33061,
-    dialect: 'mysql',
+dotenv.config({ path: './.env' });
+
+const db = new Sequelize(process.env.DB_CONNECTION, process.env.DB_USERNAME, process.env.DB_PASSWORD ?? '', {
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    dialect: process.env.DB_CONNECTION,
     define: {
         timestamps: true,
     },
