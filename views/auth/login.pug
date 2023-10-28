@@ -1,7 +1,9 @@
 extends ../layout/index
 
-div
-    if authenticated
-        p Autenticado
-    else
-         p.text-center Inicia sesion
+block content
+
+    div
+        if authenticated
+            p Autenticado
+        else
+            p.text-center.text-2xl Inicia sesion
