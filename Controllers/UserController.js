@@ -1,7 +1,7 @@
 
 const loginForm = (req, res) => {
     res.render('auth/login', {
-        authenticated: false,
+        title: "Iniciar sesión",
     });
 }
 
