@@ -699,6 +699,15 @@ select {
 .mt-2 {
   margin-top: 0.5rem;
 }
+.ml-2 {
+  margin-left: 0.5rem;
+}
+.mt-4 {
+  margin-top: 1rem;
+}
+.mt-6 {
+  margin-top: 1.5rem;
+}
 .block {
   display: block;
 }
@@ -720,6 +729,9 @@ select {
 .w-full {
   width: 100%;
 }
+.max-w-md {
+  max-width: 28rem;
+}
 .flex-col {
   flex-direction: column;
 }
@@ -736,6 +748,11 @@ select {
   --tw-space-y-reverse: 0;
   margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+}
+.space-y-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
 .rounded-md {
   border-radius: 0.375rem;

@@ -11,4 +11,10 @@ const registerForm = (req, res) => {
     });
 }
 
-export {loginForm, registerForm}
+const forgotPasswordForm = (req, res) => {
+    res.render('auth/forgot_password', {
+        title: '¿Olvidaste tu contraseña?',
+    });
+}
+
+export {loginForm, registerForm, forgotPasswordForm}

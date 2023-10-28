@@ -30,7 +30,6 @@ block content
                         input#password_confirmation.block.w-full.rounded-md.border-0.text-gray-900.shadow-sm.ring-1.ring-inset.ring-gray-300(name='password_confirmation' type='password'  required='' class='py-1.5 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6')
                 div
                     input.flex.w-full.justify-center.rounded-md.bg-indigo-600.px-3.text-sm.font-semibold.leading-6.text-white.shadow-sm(type='submit' value="Regístrate" class='py-1.5 hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600')
-            //- p.mt-10.text-center.text-sm.text-gray-500
-            //-     | Not a member?
-            //-     a.font-semibold.leading-6.text-indigo-600(href='#' class='hover:text-indigo-500')
-            //-         | Start a 14 day free trial
+            p.mt-10.text-center.text-sm.text-gray-500
+                | ¿Ya tienes cuenta?
+                a.font-semibold.leading-6.text-indigo-600.ml-2(href='/auth/login' class='hover:text-indigo-500') Inicia sesión
