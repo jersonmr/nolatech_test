@@ -3,12 +3,6 @@ import User from '../models/User.js';
 import { Op } from "sequelize";
 import { registerEmail } from "../helpers/emails.js";
 
-const loginForm = (req, res) => {
-    res.render('auth/login', {
-        title: "Iniciar sesión",
-    });
-}
-
 const registerForm = (req, res) => {
     res.render('auth/register', {
         title: 'Registrar cuenta',
@@ -73,4 +67,4 @@ const register = async (req, res) => {
     });
 }
 
-export {loginForm, registerForm, register}
+export {registerForm, register}

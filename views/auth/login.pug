@@ -6,8 +6,23 @@ block content
         div(class='sm:mx-auto sm:w-full sm:max-w-sm')
             img.mx-auto.h-10.w-auto(src='https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600' alt='Nolatech')
             h2.mt-10.text-center.text-2xl.font-bold.leading-9.tracking-tight.text-gray-900= title
+
+            if errors
+                .rounded-md.bg-red-50.p-4.mt-4
+                    .flex
+                        .flex-shrink-0
+                            svg.h-5.w-5.text-red-400(viewBox="0 0 20 20", fill="currentColor", aria-hidden="true")
+                                path(fill-rule="evenodd", d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z", clip-rule="evenodd")
+                        .ml-3
+                            h3.text-sm.font-medium.text-red-800 Hay #{errors.length} errores en tu petición
+                            .mt-2.text-sm.text-red-700
+                                ul.list-disc.space-y-1.pl-5(role="list")
+                                    each error in errors
+                                        li= error.msg
+
         .mt-10(class='sm:mx-auto sm:w-full sm:max-w-sm')
-            form.space-y-6(action='#' method='POST')
+            form.space-y-6(action='/auth/login' method='POST' novalidate)
+                input(type="hidden", name="_csrf", value=csrf)
                 div
                     label.block.text-sm.font-medium.leading-6.text-gray-900(for='email') Correo electrónico
                     .mt-2

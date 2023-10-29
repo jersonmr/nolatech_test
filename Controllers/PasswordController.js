@@ -52,7 +52,7 @@ const forgotPassword = async (req, res) => {
     });
 }
 
-const create = async (req, res) => {
+const resetPasswordForm = async (req, res) => {
     const { token } = req.params;
 
     const user = await User.findOne({ where: {token} });
@@ -71,7 +71,7 @@ const create = async (req, res) => {
     });
 }
 
-const store = async (req, res) => {
+const storeResetPassword = async (req, res) => {
     await check('password').isLength({ min: 6 }).withMessage('La contraseña debe contener al menos 6 caracteres').run(req);
 
     let result = validationResult(req);
@@ -100,4 +100,4 @@ const store = async (req, res) => {
     });
 }
 
-export {forgotPasswordForm, forgotPassword, create, store}
+export {forgotPasswordForm, forgotPassword, resetPasswordForm, storeResetPassword}
