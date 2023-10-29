@@ -16,12 +16,6 @@ const registerForm = (req, res) => {
     });
 }
 
-const forgotPasswordForm = (req, res) => {
-    res.render('auth/forgot_password', {
-        title: '¿Olvidaste tu contraseña?',
-    });
-}
-
 const register = async (req, res) => {
     await check('name').notEmpty().withMessage('El nombre no puede estar vacío').run(req);
     await check('surname').notEmpty().withMessage('El apellido no puede estar vacío').run(req);
@@ -79,4 +73,4 @@ const register = async (req, res) => {
     });
 }
 
-export {loginForm, registerForm, forgotPasswordForm, register}
+export {loginForm, registerForm, register}

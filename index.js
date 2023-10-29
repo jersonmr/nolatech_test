@@ -11,8 +11,6 @@ app.use( express.urlencoded({ extended: true,}) );
 app.use( cookieParser() );
 app.use( csrf({ cookie: true, }) );
 
-
-
 // Database connection
 try {
     await db.authenticate();

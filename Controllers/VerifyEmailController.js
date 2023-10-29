@@ -6,7 +6,7 @@ const verifyEmail = async (req, res, next) => {
     const user = await User.findOne({ where: {token} });
 
     if (!user) {
-        return res.render('auth/verify_email_response', {
+        return res.render('auth/response', {
             title: '¡Error al confirmar tu cuenta!',
             message: 'Hubo un error al confirmar tu cuenta, intenta de nuevo',
             error: true,
@@ -17,7 +17,7 @@ const verifyEmail = async (req, res, next) => {
     user.emailVerifiedAt = new Date();
     await user.save();
 
-    return res.render('auth/verify_email_response', {
+    return res.render('auth/response', {
         title: '¡Cuenta confirmada!',
         message: 'La cuenta se confirmo correctamente',
     });
