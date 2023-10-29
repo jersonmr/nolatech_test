@@ -723,6 +723,9 @@ select {
 .inline-flex {
   display: inline-flex;
 }
+.hidden {
+  display: none;
+}
 .h-10 {
   height: 2.5rem;
 }

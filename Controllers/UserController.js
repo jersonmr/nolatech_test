@@ -12,6 +12,7 @@ const loginForm = (req, res) => {
 const registerForm = (req, res) => {
     res.render('auth/register', {
         title: 'Registrar cuenta',
+        csrf: req.csrfToken(),
     });
 }
 
@@ -38,6 +39,7 @@ const register = async (req, res) => {
             title: 'Registrar cuenta',
             errors: result.array(),
             user: matchedData(req),
+            csrf: req.csrfToken(),
         });
     }
 
@@ -58,7 +60,8 @@ const register = async (req, res) => {
         return res.render('auth/register', {
             title: 'Registrar cuenta',
             errors: [{ msg: 'El usuario ya se encuentra registrado' }],
-            user: matchedData(req)
+            user: matchedData(req),
+            csrf: req.csrfToken(),
         });
     }
 
