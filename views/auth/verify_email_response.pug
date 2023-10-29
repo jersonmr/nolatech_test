@@ -1,0 +1,10 @@
+extends ../layout/index
+
+block content
+    div(class="px-6 py-24 sm:py-32 lg:px-8")
+        div(class="max-w-2xl mx-auto text-center")
+            h2(class=`text-4xl font-bold tracking-tight sm:text-6xl ${error ? 'text-red-700' : 'text-green-700'}`)= title
+            p(class="mt-6 text-lg leading-8 text-gray-600")= message
+
+            if !error
+                a(href="/auth/login", class="inline-flex items-center px-4 py-2 text-sm font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out bg-gray-800 border border-transparent rounded-md hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2") Ya puedes iniciar sesión

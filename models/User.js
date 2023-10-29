@@ -20,12 +20,12 @@ const User = db.define('users', {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    email_verified_at: DataTypes.DATE,
     password: {
         type: DataTypes.STRING,
         allowNull: false,
     },
     token: DataTypes.STRING,
+    emailVerifiedAt: DataTypes.DATE,
 }, {
     hooks: {
         beforeCreate: async function (user) {

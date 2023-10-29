@@ -71,9 +71,8 @@ const register = async (req, res) => {
         token: user.token,
     })
 
-    return res.render('templates/message', {
+    return res.render('auth/verify_email', {
         title: 'Cuenta creada correctamente',
-        message: 'Hemos enviado un email de confirmación, por favor presiona en el enlace',
     });
 }
 

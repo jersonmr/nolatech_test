@@ -22,7 +22,7 @@ const registerEmail = async (data) => {
 
             <p>Solo debes hacer clic en el siguiente enlace</p>
 
-            <a href="">Confirmar cuenta</a>
+            <a href="${process.env.APP_URL}:${process.env.PORT ?? 3000}/auth/verify-email/${token}">Confirmar cuenta</a>
 
             <p>Si tu no creaste esta cuenta, puedes ignorar el mensaje.</p>
         `
