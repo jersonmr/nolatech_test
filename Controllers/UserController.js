@@ -1,7 +1,7 @@
 import { check, matchedData, validationResult } from "express-validator";
 import User from '../models/User.js';
 import { Op } from "sequelize";
-import { generateId } from "../helpers/tokens.js";
+import { registerEmail } from "../helpers/emails.js";
 
 const loginForm = (req, res) => {
     res.render('auth/login', {
@@ -37,13 +37,7 @@ const register = async (req, res) => {
         return res.render('auth/register', {
             title: 'Registrar cuenta',
             errors: result.array(),
-            user: matchedData(req)
-            // user: {
-            //     name: req.body.name,
-            //     surname: req.body.surname,
-            //     username: req.body.username,
-            //     email: req.body.email,
-            // }
+            user: matchedData(req),
         });
     }
 
@@ -68,11 +62,19 @@ const register = async (req, res) => {
         });
     }
 
-    // res.json(result.array());
-
     const user = await User.create(req.body);
 
-    res.json(user);
+    registerEmail({
+        name: user.name,
+        surname: user.surname,
+        email: user.email,
+        token: user.token,
+    })
+
+    return res.render('templates/message', {
+        title: 'Cuenta creada correctamente',
+        message: 'Hemos enviado un email de confirmación, por favor presiona en el enlace',
+    });
 }
 
 export {loginForm, registerForm, forgotPasswordForm, register}
