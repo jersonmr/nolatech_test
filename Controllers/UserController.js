@@ -1,6 +1,5 @@
 import { check, matchedData, validationResult } from "express-validator";
 import User from "../models/User.js"
-import { Op } from "sequelize";
 
 const editUserForm = async (req, res) => {
     const user = await User.findByPk(req.user.id);
@@ -35,6 +34,8 @@ const editUser = async (req, res) => {
     user.surname = surname;
 
     await user.save();
+
+    req.flash('success', 'Registro editado con éxito');
 
     res.redirect('/dashboard');
 }

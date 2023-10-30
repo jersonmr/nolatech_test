@@ -740,6 +740,9 @@ select {
 .ml-auto {
   margin-left: auto;
 }
+.mr-2 {
+  margin-right: 0.5rem;
+}
 .mt-10 {
   margin-top: 2.5rem;
 }
@@ -754,9 +757,6 @@ select {
 }
 .mt-6 {
   margin-top: 1.5rem;
-}
-.mr-2 {
-  margin-right: 0.5rem;
 }
 .block {
   display: block;
@@ -826,6 +826,9 @@ select {
 }
 .origin-top-right {
   transform-origin: top right;
+}
+.cursor-pointer {
+  cursor: pointer;
 }
 .list-disc {
   list-style-type: disc;

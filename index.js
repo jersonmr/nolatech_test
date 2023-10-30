@@ -1,6 +1,8 @@
 import express from "express";
 import csrf from "csurf";
 import cookieParser from "cookie-parser";
+import session from "express-session";
+import flash from "connect-flash";
 
 import userRoutes from "./routes/userRoutes.js";
 import appRoutes from "./routes/appRoutes.js";
@@ -11,6 +13,13 @@ const app = express();
 app.use( express.urlencoded({ extended: true,}) );
 app.use( cookieParser() );
 app.use( csrf({ cookie: true, }) );
+app.use(session({
+    secret:'flashnolatech',
+    saveUninitialized: true,
+    resave: true,
+}));
+
+app.use(flash());
 
 // Database connection
 try {
@@ -25,10 +34,16 @@ try {
 app.set('view engine', 'pug');
 app.set('views', './views');
 
+app.use(function(req, res, next){
+    res.locals.message = req.flash();
+    next();
+});
+
 // Public folder
 app.use(express.static('public'))
 
 // Routing
+app.get('/', (req, res) => res.redirect('/auth/login'));
 app.use('/auth', userRoutes);
 app.use('/', appRoutes);
 
