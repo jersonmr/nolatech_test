@@ -17,7 +17,7 @@ Para correr este proyecto es necesario tener instalado en tu equipo:
 ## Como instalar
 ---
 
-1. Clona el proyecto desde este repositorio [Test Nolatech](a href="https://github.com/jersonmr/test_nolatech)
+1. Clona el proyecto desde este repositorio [Test Nolatech](https://github.com/jersonmr/nolatech_test)
 2. Accede a una terminal ubicate en el directorio donde se encuentra el proyecto
 3. Ejecuta el comando `npm install` para instalar todos los paquetes necesarios
 4. Copia el archivo `.env.example` y renombralo a `.env`
