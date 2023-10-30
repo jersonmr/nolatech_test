@@ -3,6 +3,7 @@ import csrf from "csurf";
 import cookieParser from "cookie-parser";
 
 import userRoutes from "./routes/userRoutes.js";
+import appRoutes from "./routes/appRoutes.js";
 import db from "./config/db.js";
 
 const app = express();
@@ -29,6 +30,7 @@ app.use(express.static('public'))
 
 // Routing
 app.use('/auth', userRoutes);
+app.use('/', appRoutes);
 
 const port = process.env.PORT || 3000;
 

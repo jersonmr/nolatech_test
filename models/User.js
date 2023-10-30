@@ -33,6 +33,13 @@ const User = db.define('users', {
             user.password = await bcrypt.hash(user.password, salt);
             user.token = generateId();
         }
+    },
+    scopes: {
+        removePassword: {
+            attributes: {
+                exclude: ['password', 'token', 'emailVerifiedAt', 'createdAt', 'updatedAt'],
+            }
+        }
     }
 });
 
