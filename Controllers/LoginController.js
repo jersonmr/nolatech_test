@@ -58,4 +58,8 @@ const login = async (req, res) => {
     }).redirect('/dashboard')
 }
 
-export { loginForm, login }
+const logout = (req, res) => {
+    return res.clearCookie('_token').status(200).redirect('/auth/login');
+}
+
+export { loginForm, login, logout }

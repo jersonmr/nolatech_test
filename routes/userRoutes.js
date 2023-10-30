@@ -1,6 +1,6 @@
 import express from "express";
 
-import { loginForm, login } from "../Controllers/LoginController.js";
+import { loginForm, login, logout } from "../Controllers/LoginController.js";
 import { register, registerForm } from "../Controllers/RegisterController.js";
 import { verifyEmail } from "../Controllers/VerifyEmailController.js";
 import { resetPasswordForm, forgotPasswordForm, forgotPassword, storeResetPassword } from "../Controllers/PasswordController.js";
@@ -20,5 +20,7 @@ router.post('/forgot-password', forgotPassword);
 
 router.get('/reset-password/:token', resetPasswordForm);
 router.post('/reset-password/:token', storeResetPassword);
+
+router.post('/logout', logout);
 
 export default router;
