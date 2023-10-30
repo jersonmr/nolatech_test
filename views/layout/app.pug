@@ -28,7 +28,7 @@ html(lang="es")
 
                                 div(class="absolute right-0 z-10 w-48 py-1 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1")
                                     // Active: "bg-gray-100", Not Active: ""
-                                    a#user-menu-item-0(href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1") Mi perfil
+                                    a#user-menu-item-0(href="/edit-user" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1") Editar mi perfil
                                     form(action="/auth/logout" method="POST")
                                         input(type="hidden" name="_csrf" value=csrf)
                                         input#user-menu-item-2(type="submit" value="Cerrar sesión" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1")
@@ -69,7 +69,7 @@ html(lang="es")
             div(class="py-10")
                 header
                     div(class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8")
-                        h1(class="text-3xl font-bold leading-tight tracking-tight text-gray-900") Dashboard
+                        h1(class="text-3xl font-bold leading-tight tracking-tight text-gray-900")= title
                 main
                     div(class="mx-auto max-w-7xl sm:px-6 lg:px-8")
                         // Your content
